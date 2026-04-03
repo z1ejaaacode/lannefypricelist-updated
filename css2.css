@@ -1,0 +1,401 @@
+/* =========================
+   HERO
+========================= */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 15px;
+  text-align: center;
+}
+
+.hero-image {
+  order: 1;
+  margin-bottom: 15px;
+}
+
+.hero-text {
+  order: 2;
+  max-width: 500px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.hero-banner {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.fake-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #333;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: default;
+  user-select: none;
+}
+
+/* DESKTOP */
+@media (min-width: 900px) {
+  .hero {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    text-align: left;
+  }
+
+  .hero-text {
+    order: 1;
+    max-width: 450px;
+  }
+
+  .hero-image {
+    order: 2;
+    margin-bottom: 0;
+  }
+}
+
+/* =========================
+   PRICE WRAPPER
+========================= */
+.price-box {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* SELECT */
+.option-select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.option-select img {
+  width: 18px;
+}
+
+/* DROPDOWN */
+.option-list {
+  display: none;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.option-item {
+  padding: 12px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;      /* mencegah teks wrap */
+  overflow: hidden;         /* sembunyikan kelebihan teks */
+  text-overflow: ellipsis;  /* tambahkan ... jika teks terlalu panjang */
+}
+
+.option-item img {
+  width: 18px;
+  height: 18px;
+}
+
+.option-item:hover {
+  background: #f5f5f5;
+}
+
+/* =========================
+   PRICE LIST
+========================= */
+.price-list {
+  margin-top: 10px;
+}
+
+.price-content {
+  display: none;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: visible; /* biar konten tidak kepotong */
+}
+
+.price-item {
+  position: relative;
+  overflow: visible;
+  padding: 16px 12px 12px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: 0.25s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-item:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.price-item.active {
+  background: #333;
+  color: #fff;
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.price-item span:last-child {
+  font-weight: 600;
+}
+
+/* =========================
+   ORDER FORM
+========================= */
+.order-box {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 15px;
+  background: #fff;
+  border-radius: 12px;
+}
+
+.order-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.input-group img {
+  width: 16px;
+  opacity: 0.7;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.input-group:focus-within {
+  border-bottom: 1px solid #333;
+}
+
+.order-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.order-btn:hover {
+  background: #000;
+}
+
+/* =========================
+   SUMMARY
+========================= */
+.selected-summary {
+  max-width: 500px;
+  margin: 10px auto 0;
+  padding: 12px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  font-size: 14px;
+  display: none;
+}
+
+/* =========================
+   POPUP
+========================= */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.2);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.popup-box {
+  width: 90%;
+  max-width: 380px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+/* =========================
+   PAYMENT
+========================= */
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.payment-option input {
+  display: none;
+}
+
+.custom-radio {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #333;
+  border-radius: 6px;
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.payment-option input:checked + .custom-radio {
+  background-color: #333;
+  border-color: #333;
+}
+
+.payment-option input:checked + .custom-radio::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.payment-option img {
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+}
+
+/* =========================
+   SCROLL + BLUR
+========================= */
+html {
+  scroll-behavior: smooth;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+body.blur main {
+  filter: blur(4px);
+}
+
+.price-item.best {
+  border: 1px solid #333;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.best-badge {
+  font-size: 10px;
+  background: #333;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 6px;
+  animation: pulseTag 1.5s infinite;
+}
+
+@keyframes pulseTag {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* =========================
+   DROPDOWN SERVICE LIST PANJANG
+========================= */
+.service-item {
+  white-space: nowrap;      /* mencegah teks wrap */
+  overflow: hidden;         /* sembunyikan kelebihan teks */
+  text-overflow: ellipsis;  /* tambahkan ... jika kepotong */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;          /* jangan melebihi container */
+}
+
+.service-item span {
+  max-width: 200px;         /* sesuaikan lebar tulisan */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Tulisan panjang di dropdown mengecil supaya muat 1 baris */
+.service-item span {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 14px;        /* ukuran default */
+  max-width: calc(100% - 30px); /* sisakan space buat icon */
+}
+
+/* auto resize untuk teks panjang */
+.service-item span {
+  font-size: clamp(10px, 2.5vw, 14px); 
+  /* minimal 10px, maksimal 14px, menyesuaikan lebar viewport */
+}

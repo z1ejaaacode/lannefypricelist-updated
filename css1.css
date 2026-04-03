@@ -1,0 +1,198 @@
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 0px 0px 20px 20px;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+  z-index: 2000;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* HAMBURGER */
+.hamburger {
+  width: 24px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.hamburger.active {
+  transform: rotate(90deg);
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -70%;
+  width: 70%;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 0px 25px 25px 0px;
+  transition: left 0.3s ease;
+  z-index: 3000;
+}
+
+.sidebar.show {
+  left: 0;
+}
+
+/* SIDEBAR HEADER */
+.sidebar-header {
+  padding: 20px 20px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* LOGO SIDEBAR */
+.sidebar-logo {
+  font-family: "estetik", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #111;
+  letter-spacing: 0.5px;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  margin-top: 0;
+}
+
+/* ITEM MENU */
+.menu a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+border-radius: 8px;
+  padding: 12px 0 12px 18px; /* ⬅️ ini kunci biar ga nabrak garis */
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eaeaea;
+
+  transition: 0.25s ease;
+}
+
+/* ICON */
+.menu a img {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* HOVER */
+.menu a:hover {
+  background: #f5f5f5;
+  transform: translateX(4px);
+}
+
+/* ACTIVE */
+.menu a.active {
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+
+/* GARIS ACTIVE (FIX FINAL) */
+.menu a.active::before {
+  content: "";
+  position: absolute;
+  left: 0; /* ⬅️ tetap di kiri */
+  top: 20%;
+  width: 3px;
+  height: 60%;
+  background: #333;
+  border-radius: 3px;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.2);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 2500;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.content {
+  padding-top: 10px;
+  text-align: center;
+}
+
+/* SCROLL */
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 20px 20px;
+  scroll-margin-top: 80px;
+}
+
+/* =========================
+   SIDEBAR ANIMATION
+========================= */
+
+.sidebar-header,
+.menu a {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.sidebar.show .sidebar-header {
+  animation: slideFade 0.4s ease forwards;
+}
+
+.sidebar.show .menu a:nth-child(1) {
+  animation: slideFade 0.4s ease forwards;
+  animation-delay: 0.1s;
+}
+
+.sidebar.show .menu a:nth-child(2) {
+  animation: slideFade 0.4s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.sidebar.show .menu a:nth-child(3) {
+  animation: slideFade 0.4s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+

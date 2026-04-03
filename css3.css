@@ -1,0 +1,244 @@
+/* =========================
+   ATURAN ORDER - MODERN CLEAN
+========================= */
+#aturan {
+  padding: 20px 15px;
+  margin: 20px auto;
+  max-width: 500px;
+}
+
+/* CARD */
+#aturan .order-box {
+  background: linear-gradient(180deg, #ffffff, #f9fafb);
+  border-radius: 16px;
+  padding: 18px;
+  border: 1px solid #eee;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: 0.25s ease;
+}
+
+#aturan .order-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+/* TITLE + ICON */
+.aturan-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+}
+
+.aturan-title img {
+  width: 18px;
+  height: 18px;
+  opacity: 0.8;
+}
+
+/* GARIS */
+#aturan hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 12px 0;
+}
+
+/* LIST */
+.aturan-list {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* NOTE */
+.aturan-note {
+  margin-top: 12px;
+  padding: 10px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #333;
+  text-align: center;
+}
+
+/* FOOTER */
+.aturan-footer {
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: center;
+  color: #888;
+}
+
+/* =========================
+   REKOMENDASI SECTION
+========================= */
+#recommendation {
+  padding: 20px 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.recom-box {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* HEADER */
+.recom-header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* INI KUNCINYA */
+  gap: 8px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.recom-header img {
+  width: 20px;
+}
+
+.recom-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  align-items: center;
+  color: #fff;
+}
+
+/* LIST */
+.recom-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ITEM */
+.recom-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: 0.25s ease;
+}
+
+.recom-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+
+/* ICON */
+.recom-item img {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+/* TEXT */
+.recom-text h4 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.recom-text p {
+  font-size: 12px;
+  color: #666;
+  margin: 2px 0 0;
+}
+
+#recommendation { 
+  background: lightslategrey;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  background: #ffffff;
+  border-top: 1px solid #ddd;
+  padding: 30px 20px 15px;
+  margin-top: 40px;
+  text-align: center;
+  border-radius: 20px 20px 0 0; /* Biar ujung atasnya agak melengkung manis */
+}
+
+.footer-content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-family: "estetik", sans-serif;
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.footer-desc {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  padding: 0 10px;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.footer-social a {
+  display: inline-block;
+  background: #f5f5f5;
+  padding: 8px;
+  border-radius: 50%; /* Bikin background bulat untuk ikon */
+  transition: 0.3s ease;
+}
+
+.footer-social a img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+
+
+.footer-social a:hover {
+  background: #e0e0e0;
+  transform: translateY(-3px); /* Efek melompat kecil saat disentuh */
+}
+
+.footer-bottom {
+  border-top: 1px dashed #eee;
+  padding-top: 15px;
+  font-size: 12px;
+  color: #999;
+}
+
+/* SAMAKAN WIDTH ATURAN DENGAN FORM ORDER */
+#aturan {
+  padding: 20px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#aturan .order-box {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.price-item.best {
+  position: relative;
+  border-radius: 8px;
+  border: 0.5px solid black;
+}
+

@@ -1,0 +1,489 @@
+/* =========================
+   SERVICE SELECT BOX
+========================= */
+.service-box {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+.service-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+/* LEFT */
+.service-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.service-left img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* TEXT */
+#selectedService {
+  font-size: 14px;
+  color: #333;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  max-width: 220px;
+}
+
+/* ARROW */
+.arrow {
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.service-header.active .arrow {
+  transform: rotate(180deg);
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+.service-list {
+  display: none;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+
+.service-list.show {
+  display: block;
+}
+
+.service-item {
+  padding: 12px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.service-item img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.service-item:hover {
+  background: #f5f5f5;
+}
+
+/* =========================
+   PRICE LIST
+========================= */
+#priceContainer {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+/* ITEM */
+.price-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px;
+  padding-left: 30px; /* space icon */
+
+  font-size: 14px;
+  color: #111;
+
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  cursor: pointer;
+
+  overflow: hidden;
+  transition: all 0.25s ease;
+
+  opacity: 0;
+}
+
+/* HOVER */
+.price-item:hover {
+  background: #f7f7f7;
+  transform: translateY(-1px);
+}
+
+/* ACTIVE */
+.price-item.active {
+  background: #333;
+  transform: scale(1.01);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* TEXT */
+.price-item .qty {
+  font-weight: 500;
+  color: inherit;
+}
+
+.price-item .price {
+  font-weight: 600;
+  color: inherit;
+}
+
+/* ACTIVE TEXT FIX */
+.price-item.active .qty,
+.price-item.active .price {
+  color: #fff;
+}
+
+/* =========================
+   CHECK ICON (FIX TOTAL)
+========================= */
+.check-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.5);
+
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+
+  opacity: 0;
+  transition: 0.2s ease;
+
+  /* 🔥 UBAH JADI PUTIH */
+  filter: brightness(0) invert(1);
+}
+
+
+/* muncul saat active */
+.price-item.active .check-icon {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+/* =========================
+   RIPPLE EFFECT
+========================= */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  transform: scale(0);
+  animation: rippleAnim 0.5s linear;
+  pointer-events: none;
+}
+
+@keyframes rippleAnim {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   SKELETON
+========================= */
+.skeleton {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.skeleton-bar {
+  height: 14px;          /* lebih tebal */
+  border-radius: 8px;    /* lebih rounded */
+  background: linear-gradient(
+    90deg,
+    #eee 25%,
+    #ddd 50%,   /* lebih kontras */
+    #eee 75%
+  );
+  background-size: 400% 100%;
+  animation: skeletonAnim 1.2s infinite linear;
+}
+
+@keyframes skeletonAnim {
+  0% { background-position: 100% 0; }
+  100% { background-position: 0 0; }
+}
+
+/* =========================
+   ANIMATION MASUK
+========================= */
+.price-item.show {
+  animation: fadeSlideUp 0.35s ease forwards;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   INPUT TARGET BOX
+========================= */
+.input-box {
+  max-width: 500px;
+  margin: 12px auto 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* WRAPPER */
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  transition: 0.2s;
+}
+
+/* ICON */
+.input-group img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  opacity: 0.6;
+}
+
+/* INPUT */
+.input-group input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  font-family: inherit;
+  color: #111;
+  background: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+
+/* PLACEHOLDER */
+.input-group input::placeholder {
+  color: #999;
+  transition: 0.2s;
+}
+
+/* FOCUS EFFECT */
+.input-group:focus-within {
+  background: #f9f9f9;
+}
+
+/* ICON SAAT FOCUS */
+.input-group:focus-within img {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* BORDER GLOW HALUS */
+.input-box:focus-within {
+  border-color: #333;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* =========================
+   PAYMENT BOX
+========================= */
+.payment-box {
+  max-width: 500px;
+  margin: 12px auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* TITLE */
+.payment-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* OPTION */
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+position: relative;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s;
+  background: #fafafa;
+}
+
+/* ICON */
+.payment-option img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* TEXT */
+.payment-option span {
+  font-size: 14px;
+  color: #333;
+}
+
+/* RADIO */
+.payment-option input {
+  accent-color: #333;
+  cursor: pointer;
+}
+
+/* HOVER */
+.payment-option:hover {
+  background: #f3f3f3;
+}
+
+/* ACTIVE SELECT */
+.payment-option input:checked + img + span {
+  font-weight: 600;
+}
+
+.payment-option input:checked {
+  transform: scale(1.1);
+}
+
+/* BORDER ACTIVE */
+.payment-option:has(input:checked) {
+  border-color: #333;
+  background: #f9f9f9;
+}
+
+/* =========================
+   BUTTON ORDER
+========================= */
+.order-btn {
+  width: 100%;
+  margin-top: 5px;
+
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+
+  background: #333;
+  color: #fff;
+
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+/* HOVER */
+.order-btn:hover {
+  background: #000;
+  transform: translateY(-1px);
+}
+
+/* CLICK */
+.order-btn:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================
+   LOADING OVERLAY
+========================= */
+.loading-overlay {
+  display: none; /* HARUS default hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-box {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* spasi antara spinner & teks */
+  min-width: 250px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #eee;
+  border-top: 5px solid #007bff; /* warna spinner */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.loading-box p {
+  margin-top: 12px;
+  font-weight: 600; /* teks lebih bold */
+  color: #333;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   BUTTON & PAYMENT FIX GLOBAL
+========================= */
+button,
+.payment-option,
+.order-btn {
+  font-family: "bagus" !important; /* paksa font */
+  font-weight: bold;
+}
