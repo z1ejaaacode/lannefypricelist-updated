@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "bagus", sans-serif;
+  background: #f5f5f5;
+  color: #333;
+}
+
+/* FONT */
+@font-face {
+  font-family: "estetik";
+  src: url("font/estetik.otf");
+}
+
+@font-face {
+  font-family: "bagus";
+  src: url("font/bagus.otf");
+}
+
+h1, h2, h3 {
+  font-family: "estetik";
+}
+
+.order-btn {
+  transition: 0.2s ease;
+}
+
+.order-btn:active {
+  transform: scale(0.96);
+}
+
+/* Paksa Light Mode */
+:root {
+  color-scheme: light; /* browser forms, scrollbars, input colors */
+  background-color: #fff;
+  color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* override semua warna dark mode */
+  body {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+  /* contoh elemen lain */
+  .sidebar, .menu, .loading-box {
+    background-color: #fff !important;
+    color: #000 !important;
+    border-color: #ddd !important;
+  }
+}
