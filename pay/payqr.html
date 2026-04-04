@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bayar QRIS - Lannefy</title>
+  <link rel="stylesheet" href="pay.css">
+</head>
+<body>
+
+  <main class="container">
+
+    <!-- TIMER -->
+    <div class="timer-box">
+      <div class="timer-content">
+        <span>Selesaikan pembayaran dalam</span>
+        <span id="timer">Timer Dimulai</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div id="timerEnd" class="timer-end">Waktu Habis</div>
+    </div>
+
+    <!-- STRUK DETAIL PESANAN -->
+    <div class="struk-box">
+      <div class="struk-header">
+        <span>Informasi Pesanan</span>
+      </div>
+      <br>
+      <div class="struk-detail">
+        <div class="struk-row">
+          <div class="row-left">
+            <span class="label">ID Pesanan</span>
+            <span class="value" id="orderId">-</span>
+          </div>
+        </div>
+        <div class="struk-row">
+          <div class="row-left">
+            <span class="label">Username</span>
+            <span class="value" id="orderUser">-</span>
+          </div>
+        </div>
+        <div class="struk-row">
+          <div class="row-left">
+            <span class="label">Layanan</span>
+            <span class="value" id="orderService">-</span>
+          </div>
+        </div>
+        <div class="struk-row">
+          <div class="row-left">
+            <span class="label">Jumlah</span>
+            <span class="value" id="orderQty">-</span>
+          </div>
+        </div>
+        <div class="struk-row total-row">
+          <div class="row-left">
+            <span class="label">Total Harga</span>
+            <span class="value" id="orderTotal">-</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAYMENT INFO BOX (QRIS) -->
+    <div class="payment-info-box">
+      <div class="payment-info-header">Informasi Payment</div>
+
+      <!-- QRIS Gambar -->
+      <div class="payment-qr">
+        <img src="../pict/qrpay.jpg" alt="QRIS Lannefy" class="payment-qr-img" id="qrImg">
+      </div>
+
+      <!-- Nomor / Text -->
+      <p id="danaNumber" style="margin-top: 12px; font-weight: bold; color: black; text-align:center;">
+        Lannefy | SMM Panel
+      </p>
+
+      <!-- Tombol Unduh QRIS -->
+      <div style="text-align:center; margin-top:12px;">
+        <button class="download-btn" style="
+          padding: 10px 16px;
+          border-radius: 8px;
+          background-color: lightgrey;
+          color: black;
+          font-weight: bold;
+          border: none;
+          cursor: pointer;
+        ">Unduh QRIS</button>
+      </div>
+
+    </div>
+    
+    <!-- CONFIRM BOX -->
+<!-- CONFIRM BOX -->
+<div class="confirm-box" id="confirmBox">
+  <div class="confirm-header">Konfirmasi Pembayaran</div>
+
+  <div class="confirm-content">
+    <p class="confirm-text">
+      Sudah menyelesaikan pembayaran? klik disini untuk konfirmasi ke admin dan kirimkan bukti pembayaran.
+    </p>
+
+    <button id="confirmBtn">Konfirmasi ke Admin</button>
+  </div>
+</div>
+    
+  </main>
+
+  <script src="qr.js"></script>
+</body>
+</html>
